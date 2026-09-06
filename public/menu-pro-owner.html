@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#08111b">
+<title>LC Menu Pro — Painel do Proprietário</title>
+<meta name="robots" content="noindex,nofollow">
+<style>
+:root{color-scheme:dark;--bg:#071019;--panel:#0b1824;--panel2:#0e2030;--line:rgba(167,191,212,.14);--line2:rgba(167,191,212,.24);--text:#f4f8fb;--muted:#8ea1b3;--muted2:#5f7488;--green:#67e0ae;--blue:#64c8ff;--gold:#e3ba5a;--danger:#ff8292;--warn:#f5c56b;--shadow:0 20px 70px rgba(0,0,0,.28);--radius:18px}*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:14px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}body{background:radial-gradient(850px 520px at 88% -12%,rgba(100,200,255,.09),transparent 64%),radial-gradient(650px 420px at -8% 100%,rgba(103,224,174,.06),transparent 67%),var(--bg)}button,input,textarea,select{font:inherit}button{color:inherit}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid rgba(103,224,174,.7);outline-offset:2px}a{color:inherit;text-decoration:none}.hidden{display:none!important}.auth{min-height:100dvh;display:grid;place-items:center;padding:24px}.auth-wrap{width:min(980px,100%);display:grid;grid-template-columns:1.05fr .95fr;border:1px solid var(--line);border-radius:28px;overflow:hidden;background:rgba(8,18,28,.96);box-shadow:var(--shadow)}.auth-brand{position:relative;min-height:610px;padding:44px;background:linear-gradient(145deg,rgba(14,37,52,.97),rgba(7,19,29,.98));overflow:hidden}.auth-brand:after{content:"";position:absolute;width:430px;height:430px;border-radius:50%;right:-180px;bottom:-200px;background:radial-gradient(circle,rgba(103,224,174,.13),transparent 68%)}.auth-brand img{width:200px;max-height:72px;object-fit:contain}.auth-brand h1{position:relative;z-index:1;margin:70px 0 15px;font-size:45px;line-height:1.03;letter-spacing:-.045em}.auth-brand p{position:relative;z-index:1;max-width:520px;color:#a5b6c4;font-size:15px;line-height:1.7}.auth-points{position:relative;z-index:1;display:grid;gap:10px;margin-top:30px}.auth-point{padding:13px 14px;border:1px solid rgba(167,191,212,.11);border-radius:13px;background:rgba(255,255,255,.024);color:#cbd7df;font-size:12px}.auth-point b{color:#fff}.auth-card{padding:44px;display:flex;flex-direction:column;justify-content:center}.eyebrow{color:#8fd6be;font-size:10px;font-weight:850;letter-spacing:.14em;text-transform:uppercase}.auth-card h2{margin:10px 0 7px;font-size:29px;letter-spacing:-.035em}.auth-card>p{margin:0 0 22px;color:var(--muted);font-size:12px}.tabs{display:flex;gap:4px;padding:4px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.018);margin-bottom:18px}.tabs button{flex:1;border:0;border-radius:8px;background:transparent;color:#71879a;padding:8px;font-size:10px;font-weight:760;cursor:pointer}.tabs button.active{background:rgba(103,224,174,.075);color:#c5efdd}.field{display:grid;gap:6px;margin-bottom:12px}.field label{font-size:10px;color:#8fa2b4;font-weight:720}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);border-radius:11px;background:#0d1d2b;color:#f5f8fa;padding:11px 12px;outline:0}.field input:focus,.field textarea:focus,.field select:focus{border-color:rgba(103,224,174,.32)}.primary,.ghost,.danger,.quiet{border-radius:11px;padding:9px 13px;font-weight:760;cursor:pointer;transition:.17s ease}.primary{border:1px solid rgba(103,224,174,.25);background:linear-gradient(135deg,#256d62,#245e78);color:#fff}.primary:hover{filter:brightness(1.07);transform:translateY(-1px)}.ghost{border:1px solid var(--line);background:rgba(255,255,255,.025);color:#c7d3dc}.ghost:hover{border-color:var(--line2);background:rgba(255,255,255,.045)}.danger{border:1px solid rgba(255,130,146,.2);background:rgba(255,130,146,.07);color:#ffabb5}.quiet{border:0;background:transparent;color:var(--muted)}.wide{width:100%}.auth-msg{min-height:22px;margin-top:12px;color:#92b3a5;font-size:11px}.shell{height:100dvh;display:grid;grid-template-columns:240px minmax(0,1fr);overflow:hidden}.side{height:100dvh;padding:18px 14px;border-right:1px solid var(--line);background:rgba(7,16,25,.96);display:flex;flex-direction:column;gap:12px}.side-brand{display:flex;align-items:center;gap:10px;padding:4px 7px 15px}.side-brand img{width:42px;height:42px;object-fit:contain}.side-brand b{display:block;font-size:14px}.side-brand small{display:block;color:var(--muted2);font-size:9px;letter-spacing:.11em;text-transform:uppercase}.store-card{padding:12px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.02)}.store-card select{width:100%;border:0;background:transparent;color:#dce6ec;font-size:11px;font-weight:720;outline:0}.store-card option{background:#0b1824}.store-meta{margin-top:7px;display:flex;align-items:center;justify-content:space-between;gap:8px;color:var(--muted2);font-size:9px}.status-pill{display:inline-flex;align-items:center;gap:5px;padding:4px 7px;border-radius:999px;border:1px solid rgba(103,224,174,.14);background:rgba(103,224,174,.05);color:#9de2c6}.status-pill:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--green)}.nav{display:grid;gap:4px;margin-top:5px}.nav button{display:flex;align-items:center;gap:10px;width:100%;border:0;border-radius:11px;background:transparent;color:#8297a9;padding:10px 11px;text-align:left;cursor:pointer}.nav button:hover{background:rgba(255,255,255,.025);color:#d2dde4}.nav button.active{background:linear-gradient(90deg,rgba(103,224,174,.09),rgba(100,200,255,.035));color:#fff;box-shadow:inset 0 0 0 1px rgba(103,224,174,.08)}.ico{width:19px;height:19px;display:grid;place-items:center;color:#77cdb3;font-size:11px;font-weight:900}.side-spacer{flex:1}.side-foot{padding:10px;border-top:1px solid var(--line);color:var(--muted2);font-size:9px}.side-foot b{display:block;color:#c4d0d8;font-size:10px;margin-bottom:2px}.main{min-width:0;height:100dvh;display:flex;flex-direction:column}.top{height:68px;flex:0 0 68px;display:flex;align-items:center;justify-content:space-between;gap:15px;padding:0 25px;border-bottom:1px solid var(--line);background:rgba(7,16,25,.72);backdrop-filter:blur(16px)}.top-title b{display:block;font-size:14px}.top-title small{color:var(--muted2);font-size:9.5px}.top-actions{display:flex;gap:8px;align-items:center}.content{flex:1;min-height:0;overflow:auto;padding:26px}.page{display:none;max-width:1180px;margin:0 auto}.page.active{display:block}.page-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}.page-head h2{margin:0 0 5px;font-size:26px;letter-spacing:-.035em}.page-head p{margin:0;color:var(--muted);font-size:11.5px}.head-actions{display:flex;gap:8px;flex-wrap:wrap}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:13px;margin-bottom:13px}.hero-main,.hero-side,.card,.metric,.row-card{border:1px solid var(--line);background:linear-gradient(180deg,rgba(13,29,42,.9),rgba(9,21,32,.92));box-shadow:inset 0 1px rgba(255,255,255,.015)}.hero-main{padding:25px;border-radius:20px;min-height:230px;position:relative;overflow:hidden}.hero-main:after{content:"";position:absolute;width:310px;height:310px;border-radius:50%;right:-140px;top:-170px;background:radial-gradient(circle,rgba(100,200,255,.12),transparent 68%)}.hero-main h3{position:relative;z-index:1;margin:12px 0 8px;font-size:31px;letter-spacing:-.04em;line-height:1.08}.hero-main p{position:relative;z-index:1;max-width:650px;margin:0;color:#9fb0bd;font-size:12px;line-height:1.65}.hero-actions{position:relative;z-index:1;display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}.hero-side{padding:20px;border-radius:20px}.hero-side h3{margin:0;font-size:12px}.health{display:grid;gap:10px;margin-top:14px}.health div{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid rgba(167,191,212,.07);font-size:10px}.health div:last-child{border-bottom:0}.health span{color:var(--muted)}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:13px}.metric{padding:15px;border-radius:15px}.metric small{color:var(--muted);font-size:9px}.metric strong{display:block;margin-top:5px;font-size:24px;letter-spacing:-.04em}.metric em{display:block;margin-top:1px;color:var(--muted2);font-size:8.5px;font-style:normal}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:13px}.card{padding:18px;border-radius:18px}.card-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.card-head h3{margin:0;font-size:12px}.card-head p{margin:3px 0 0;color:var(--muted2);font-size:9px}.quick{display:grid;gap:8px}.quick button{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:11px;border:1px solid rgba(167,191,212,.09);border-radius:11px;background:rgba(255,255,255,.018);text-align:left;cursor:pointer}.quick button:hover{background:rgba(255,255,255,.035)}.quick b{font-size:10.5px}.quick small{display:block;color:var(--muted2);font-size:8.5px;margin-top:2px}.toolbar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:12px}.search{flex:1;min-width:210px}.search input,.toolbar select{height:38px;width:100%;border:1px solid var(--line);border-radius:10px;background:#0c1b29;color:#eef4f7;padding:0 11px;outline:0}.toolbar select{width:auto}.table{display:grid;gap:7px}.row-card{display:grid;grid-template-columns:58px minmax(0,1fr) auto;gap:12px;align-items:center;padding:10px 12px;border-radius:14px}.thumb{width:58px;height:54px;border-radius:10px;object-fit:cover;background:#132332;border:1px solid rgba(167,191,212,.08)}.row-title{font-size:11px;font-weight:760}.row-sub{color:var(--muted2);font-size:9px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.row-price{margin-top:4px;font-size:10px;color:#bcd0d8}.row-actions{display:flex;align-items:center;gap:7px}.mini{min-height:30px;padding:5px 9px;font-size:9px}.toggle{position:relative;width:40px;height:22px;border:0;border-radius:999px;background:#263849;cursor:pointer;transition:.2s}.toggle:after{content:"";position:absolute;width:16px;height:16px;left:3px;top:3px;border-radius:50%;background:#8193a2;transition:.2s}.toggle.on{background:rgba(103,224,174,.23)}.toggle.on:after{left:21px;background:var(--green)}.empty{padding:30px;border:1px dashed rgba(167,191,212,.14);border-radius:15px;text-align:center;color:var(--muted2);font-size:10px}.analytics-metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:13px}.analytics-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:13px;margin-bottom:13px}.analytics-list{display:grid;gap:8px}.analytics-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid rgba(167,191,212,.07)}.analytics-row:last-child{border-bottom:0}.analytics-row b{font-size:10.5px}.analytics-row small{display:block;color:var(--muted2);font-size:8.5px;margin-top:2px}.funnel{display:grid;gap:9px}.funnel-row{display:grid;grid-template-columns:105px minmax(0,1fr) 46px;gap:8px;align-items:center;font-size:9.5px}.funnel-bar{height:8px;border-radius:999px;background:rgba(255,255,255,.045);overflow:hidden}.funnel-bar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,var(--green),var(--blue))}.daily-chart{height:190px;display:flex;align-items:flex-end;gap:5px;padding:12px 4px 0;overflow-x:auto}.daily-col{min-width:20px;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:5px;height:100%}.daily-bar{width:100%;max-width:26px;min-height:2px;border-radius:5px 5px 2px 2px;background:linear-gradient(180deg,var(--blue),rgba(100,200,255,.28))}.daily-col small{font-size:7.5px;color:var(--muted2);white-space:nowrap}.analytics-note{padding:11px 12px;border:1px solid rgba(245,197,107,.13);border-radius:12px;background:rgba(245,197,107,.035);color:#a99773;font-size:9.5px;line-height:1.55}.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px}.form-card{border:1px solid var(--line);border-radius:18px;background:rgba(11,25,37,.88);padding:19px}.form-card h3{margin:0 0 14px;font-size:12px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.span2{grid-column:1/-1}.checkboxes{display:flex;gap:8px;flex-wrap:wrap}.check-chip{display:flex;align-items:center;gap:6px;padding:8px 9px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.018);font-size:9px;color:#bac8d2}.check-chip input{accent-color:#67e0ae}.modal{position:fixed;inset:0;z-index:100;background:rgba(2,7,11,.72);display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(7px)}.modal.open{display:flex}.modal-card{width:min(720px,100%);max-height:92dvh;overflow:auto;border:1px solid var(--line2);border-radius:21px;background:#0a1825;padding:20px;box-shadow:var(--shadow)}.modal-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:15px}.modal-head h3{margin:0;font-size:17px}.modal-head p{margin:3px 0 0;color:var(--muted2);font-size:9.5px}.close{width:32px;height:32px;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.02);cursor:pointer}.addon-list{display:grid;gap:7px;margin-top:10px}.addon{display:grid;grid-template-columns:minmax(0,1fr) minmax(100px,120px) minmax(130px,160px) auto;gap:7px;align-items:end;padding:10px;border:1px solid rgba(167,191,212,.09);border-radius:11px;background:rgba(255,255,255,.018)}.addon.group-row{grid-template-columns:minmax(0,1fr) 120px auto}.recommend-editor{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:8px;align-items:end;padding:10px;border:1px solid rgba(103,224,174,.1);border-radius:12px;background:rgba(103,224,174,.025)}.recommend-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(130px,180px) auto;gap:8px;align-items:center;padding:10px;border:1px solid rgba(167,191,212,.09);border-radius:11px;background:rgba(255,255,255,.018)}.upload{display:flex;align-items:center;gap:8px}.upload input{display:none}.preview-img{width:110px;height:90px;border-radius:12px;object-fit:cover;background:#102231;border:1px solid var(--line)}.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.toast{position:fixed;z-index:200;right:18px;bottom:18px;max-width:360px;padding:12px 14px;border:1px solid rgba(103,224,174,.18);border-radius:12px;background:#10271f;color:#c9f1df;box-shadow:var(--shadow);font-size:10px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:none}.toast.error{background:#321b21;border-color:rgba(255,130,146,.18);color:#ffc0c8}.mobile-menu{display:none}.no-access{padding:22px;border:1px solid rgba(245,197,107,.17);border-radius:16px;background:rgba(245,197,107,.04);color:#c6b48c}.no-access h3{margin:0 0 7px;color:#f2d58e}.no-access p{margin:0;color:#a89572;font-size:11px}.sync{font-size:9px;color:#7f93a5}.spinner{width:13px;height:13px;border:2px solid rgba(255,255,255,.15);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}@media(max-width:900px){.shell{grid-template-columns:1fr}.side{position:fixed;z-index:80;left:0;top:0;width:240px;transform:translateX(-105%);transition:.22s;box-shadow:var(--shadow)}.side.open{transform:none}.mobile-menu{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--line);border-radius:10px;background:rgba(255,255,255,.02)}.top{padding:0 14px}.content{padding:18px 14px}.hero,.grid2,.settings-grid,.analytics-grid{grid-template-columns:1fr}.analytics-metrics{grid-template-columns:1fr 1fr}.metrics{grid-template-columns:1fr 1fr}.page-head{align-items:flex-start;flex-direction:column}.auth-wrap{grid-template-columns:1fr}.auth-brand{display:none}.auth-card{padding:32px;min-height:520px}}@media(max-width:560px){.metrics{grid-template-columns:1fr 1fr}.row-card{grid-template-columns:48px minmax(0,1fr)}.thumb{width:48px;height:48px}.row-actions{grid-column:1/-1;justify-content:flex-end}.form-grid{grid-template-columns:1fr}.span2{grid-column:auto}.addon{grid-template-columns:1fr}.modal-card{padding:15px}.top-actions .ghost:not(#logoutBtn){display:none}}
+@media(max-width:760px){.addon,.addon.group-row{grid-template-columns:1fr}.addon>div:last-child{justify-content:flex-end}.settings-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<section id="auth" class="auth">
+  <div class="auth-wrap">
+    <div class="auth-brand">
+      <img src="/lcai/assets/lc-logo-official-v4.svg" alt="LC Soluções Digitais">
+      <h1>Seu cardápio,<br>sob seu controle.</h1>
+      <p>Atualize produtos, preços e disponibilidade sem depender de uma nova publicação do site.</p>
+      <div class="auth-points">
+        <div class="auth-point"><b>Produtos e preços</b> — ajuste o catálogo quando precisar.</div>
+        <div class="auth-point"><b>Disponibilidade</b> — marque itens esgotados em segundos.</div>
+        <div class="auth-point"><b>Imagens e adicionais</b> — mantenha a experiência sempre atual.</div>
+      </div>
+    </div>
+    <div class="auth-card">
+      <span class="eyebrow">LC MENU PRO</span>
+      <h2>Painel do proprietário</h2>
+      <p>Use o e-mail autorizado pela LC para acessar o estabelecimento.</p>
+      <div class="tabs">
+        <button id="tabLogin" class="active" type="button">Entrar</button>
+        <button id="tabSignup" type="button">Criar acesso</button>
+      </div>
+      <div id="loginPane">
+        <div class="field"><label>E-mail</label><input id="loginEmail" type="email" autocomplete="email"></div>
+        <div class="field"><label>Senha</label><input id="loginPassword" type="password" autocomplete="current-password"></div>
+        <button id="loginBtn" class="primary wide" type="button">Entrar no painel</button>
+        <button id="recoverBtn" class="quiet wide" type="button">Esqueci minha senha</button>
+      </div>
+      <div id="signupPane" class="hidden">
+        <div class="field"><label>Seu nome</label><input id="signupName" autocomplete="name"></div>
+        <div class="field"><label>E-mail autorizado</label><input id="signupEmail" type="email" autocomplete="email"></div>
+        <div class="field"><label>Senha</label><input id="signupPassword" type="password" autocomplete="new-password" placeholder="Mínimo de 8 caracteres"></div>
+        <button id="signupBtn" class="primary wide" type="button">Criar meu acesso</button>
+      </div>
+      <div id="resetPane" class="hidden">
+        <div class="field"><label>Nova senha</label><input id="resetPassword" type="password" autocomplete="new-password" placeholder="Mínimo de 8 caracteres"></div>
+        <div class="field"><label>Confirme a nova senha</label><input id="resetConfirm" type="password" autocomplete="new-password"></div>
+        <button id="resetBtn" class="primary wide" type="button">Salvar nova senha</button>
+      </div>
+      <div id="authMsg" class="auth-msg"></div>
+    </div>
+  </div>
+</section>
+
+<div id="shell" class="shell hidden">
+  <aside id="side" class="side">
+    <div class="side-brand">
+      <img src="/lcai/assets/lc-logo-official-v4.svg" alt="LC">
+      <div><b>LC Menu Pro</b><small>Portal do proprietário</small></div>
+    </div>
+    <div class="store-card">
+      <select id="businessSelect"></select>
+      <div class="store-meta"><span id="roleText">Proprietário</span><span id="businessStatus" class="status-pill">Ativo</span></div>
+    </div>
+    <nav class="nav">
+      <button class="active" data-page="overview"><span class="ico">01</span>Visão geral</button>
+      <button data-page="catalog"><span class="ico">02</span>Cardápio</button>
+      <button data-page="analytics"><span class="ico">03</span>Analytics</button>
+      <button data-page="settings"><span class="ico">04</span>Configurações</button>
+    </nav>
+    <div class="side-spacer"></div>
+    <div class="side-foot">
+      <b id="accountEmail">—</b>
+      <span>Conta vinculada ao estabelecimento</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="top">
+      <div style="display:flex;align-items:center;gap:10px">
+        <button id="mobileMenu" class="mobile-menu" type="button">☰</button>
+        <div class="top-title"><b id="topTitle">Visão geral</b><small id="topSub">Acompanhe e atualize seu cardápio</small></div>
+      </div>
+      <div class="top-actions">
+        <span id="syncText" class="sync">Sincronizado</span>
+        <a id="publicLinkTop" class="ghost mini hidden" target="_blank" rel="noopener">Abrir cardápio</a>
+        <button id="logoutBtn" class="ghost mini" type="button">Sair</button>
+      </div>
+    </header>
+
+    <div class="content">
+      <section id="noAccess" class="no-access hidden">
+        <h3>Seu acesso ainda não foi liberado.</h3>
+        <p>Entre com o e-mail informado no onboarding. Se você já concluiu a implantação, peça à LC para liberar o Portal do Proprietário para sua conta.</p>
+      </section>
+
+      <section id="page-overview" class="page active">
+        <div class="page-head"><div><h2>Visão geral</h2><p>Controle rápido da operação do seu cardápio digital.</p></div><div class="head-actions"><a id="publicLinkHero" class="primary hidden" target="_blank" rel="noopener">Abrir meu cardápio</a></div></div>
+        <div class="hero">
+          <div class="hero-main">
+            <span class="eyebrow">SEU LC MENU PRO</span>
+            <h3 id="heroName">Carregando…</h3>
+            <p id="heroCopy">Os dados do cardápio são atualizados pelo seu painel e refletidos na página pública.</p>
+            <div class="hero-actions"><button class="primary" data-go="catalog">Gerenciar cardápio</button><button class="ghost" data-go="settings">Configurar estabelecimento</button></div>
+          </div>
+          <div class="hero-side">
+            <h3>Situação operacional</h3>
+            <div class="health">
+              <div><span>Publicação</span><b id="healthPublish">—</b></div>
+              <div><span>Cobrança</span><b id="healthBilling">—</b></div>
+              <div><span>Última atualização</span><b id="healthUpdated">—</b></div>
+              <div><span>Nível de acesso</span><b id="healthRole">—</b></div>
+            </div>
+          </div>
+        </div>
+        <div class="metrics">
+          <div class="metric"><small>CATEGORIAS</small><strong id="metricCategories">0</strong><em>ativas no cardápio</em></div>
+          <div class="metric"><small>PRODUTOS</small><strong id="metricProducts">0</strong><em>ativos</em></div>
+          <div class="metric"><small>DISPONÍVEIS</small><strong id="metricAvailable">0</strong><em>podem ser pedidos</em></div>
+          <div class="metric"><small>ESGOTADOS</small><strong id="metricUnavailable">0</strong><em>temporariamente indisponíveis</em></div>
+        </div>
+        <div class="grid2">
+          <div class="card"><div class="card-head"><div><h3>Ações rápidas</h3><p>Atualizações mais usadas no dia a dia</p></div></div><div class="quick"><button data-go="catalog"><span><b>Produtos e preços</b><small>Editar itens, valores e descrições</small></span><span>→</span></button><button id="manageCategoriesQuick"><span><b>Categorias</b><small>Criar e organizar seções do menu</small></span><span>→</span></button><button data-go="settings"><span><b>Entrega e pagamento</b><small>Taxa, pedido mínimo e formas aceitas</small></span><span>→</span></button></div></div>
+          <div class="card"><div class="card-head"><div><h3>Itens que precisam de atenção</h3><p>Produtos ativos marcados como esgotados</p></div></div><div id="attentionList" class="quick"></div></div>
+        </div>
+      </section>
+
+      <section id="page-catalog" class="page">
+        <div class="page-head">
+          <div><h2>Cardápio</h2><p>Edite produtos e disponibilidade. As alterações chegam ao cardápio público automaticamente.</p></div>
+          <div class="head-actions"><button id="manageCategories" class="ghost">Categorias</button><button id="newProduct" class="primary">Novo produto</button></div>
+        </div>
+        <div class="toolbar">
+          <div class="search"><input id="productSearch" type="search" placeholder="Buscar produto..."></div>
+          <select id="categoryFilter"><option value="">Todas as categorias</option></select>
+          <select id="availabilityFilter"><option value="">Todos</option><option value="available">Disponíveis</option><option value="unavailable">Esgotados</option></select>
+        </div>
+        <div id="productList" class="table"></div>
+      </section>
+
+      <section id="page-analytics" class="page">
+        <div class="page-head">
+          <div><h2>Analytics</h2><p>Entenda como as pessoas usam seu cardápio e quantas chegam até a geração do pedido no WhatsApp.</p></div>
+          <div class="head-actions"><select id="analyticsPeriod" class="ghost"><option value="7">7 dias</option><option value="30" selected>30 dias</option><option value="90">90 dias</option></select><button id="refreshAnalytics" class="ghost">Atualizar</button></div>
+        </div>
+        <div class="analytics-metrics">
+          <div class="metric"><small>SESSÕES</small><strong id="anSessions">0</strong><em>visitantes no período</em></div>
+          <div class="metric"><small>VISUALIZAÇÕES</small><strong id="anViews">0</strong><em>aberturas do cardápio</em></div>
+          <div class="metric"><small>PEDIDOS GERADOS</small><strong id="anWhats">0</strong><em>ações de gerar pedido</em></div>
+          <div class="metric"><small>CONVERSÃO</small><strong id="anConversion">0%</strong><em>sessão → pedido gerado</em></div>
+        </div>
+        <div class="analytics-metrics">
+          <div class="metric"><small>PRODUTOS ABERTOS</small><strong id="anProductOpens">0</strong><em>interesse em itens</em></div>
+          <div class="metric"><small>ADICIONADOS</small><strong id="anAdds">0</strong><em>ações de adicionar ao carrinho</em></div>
+          <div class="metric"><small>CARRINHO ABERTO</small><strong id="anCarts">0</strong><em>revisões do pedido</em></div>
+          <div class="metric"><small>VALOR DE INTENÇÃO</small><strong id="anIntent">R$ 0,00</strong><em>não é faturamento confirmado</em></div>
+        </div>
+        <div class="analytics-grid">
+          <div class="card"><div class="card-head"><div><h3>Evolução diária</h3><p>Sessões por dia no período selecionado</p></div></div><div id="dailyChart" class="daily-chart"></div></div>
+          <div class="card"><div class="card-head"><div><h3>Funil</h3><p>Quantas sessões avançaram em cada etapa</p></div></div><div id="analyticsFunnel" class="funnel"></div></div>
+        </div>
+        <div class="grid2">
+          <div class="card"><div class="card-head"><div><h3>Produtos com mais interesse</h3><p>Aberturas e adições ao carrinho</p></div></div><div id="topProducts" class="analytics-list"></div></div>
+          <div class="card"><div class="card-head"><div><h3>Origem das visitas</h3><p>UTM quando disponível; caso contrário, domínio de referência</p></div></div><div id="trafficSources" class="analytics-list"></div></div>
+        </div>
+        <div class="analytics-note" style="margin-top:13px">Privacidade: este painel usa identificadores anônimos de sessão e eventos de navegação. Nome, telefone, endereço e conteúdo do pedido do consumidor não são armazenados no analytics. “Pedido gerado” significa que o consumidor acionou a geração da mensagem para o WhatsApp; não confirma que a nova janela abriu, que a mensagem foi enviada, nem que houve pagamento ou faturamento.</div>
+      </section>
+
+      <section id="page-settings" class="page">
+        <div class="page-head"><div><h2>Configurações</h2><p>Informações exibidas e utilizadas na experiência de pedido.</p></div><div class="head-actions"><button id="saveSettings" class="primary">Salvar alterações</button></div></div>
+        <div class="settings-grid">
+          <div class="form-card">
+            <h3>Identidade do estabelecimento</h3>
+            <div class="form-grid">
+              <div class="field"><label>Nome exibido</label><input id="setDisplayName"></div>
+              <div class="field"><label>Segmento</label><input id="setSegment"></div>
+              <div class="field"><label>Cidade / UF</label><input id="setCity"></div>
+              <div class="field"><label>WhatsApp de pedidos</label><input id="setWhats"></div>
+              <div class="field span2"><label>Descrição curta</label><input id="setSubtitle"></div>
+              <div class="field"><label>Iniciais da marca</label><input id="setInitials" maxlength="5"></div>
+              <div class="field"><label>Cor de destaque</label><input id="setAccent" type="color"></div>
+              <div class="field span2"><label>Logotipo do estabelecimento</label><div class="upload"><input id="logoFile" type="file" accept="image/jpeg,image/png,image/webp"><button id="uploadLogo" class="ghost" type="button">Enviar logo</button><input id="setLogo" placeholder="https://..."></div></div>
+              <div class="field span2"><label>Imagem de capa</label><div class="upload"><input id="coverFile" type="file" accept="image/jpeg,image/png,image/webp"><button id="uploadCover" class="ghost" type="button">Enviar imagem</button><input id="setCover" placeholder="https://..."></div></div>
+            </div>
+          </div>
+          <div class="form-card">
+            <h3>Operação de pedidos</h3>
+            <div class="form-grid">
+              <div class="field"><label>Horário de funcionamento</label><input id="setHours"></div>
+              <div class="field"><label>Tempo estimado</label><input id="setEta" placeholder="30–45 min"></div>
+              <div class="field"><label>Taxa de entrega (R$)</label><input id="setDeliveryFee" inputmode="decimal"></div>
+              <div class="field"><label>Pedido mínimo (R$)</label><input id="setMinimum" inputmode="decimal"></div>
+              <div class="field span2"><label>Formas de atendimento</label><div class="checkboxes"><label class="check-chip"><input id="modeDelivery" type="checkbox"> Entrega</label><label class="check-chip"><input id="modePickup" type="checkbox"> Retirada</label></div></div>
+              <div class="field span2"><label>Formas de pagamento</label><div class="checkboxes"><label class="check-chip"><input id="payPix" type="checkbox"> Pix</label><label class="check-chip"><input id="payCard" type="checkbox"> Cartão na entrega</label><label class="check-chip"><input id="payCash" type="checkbox"> Dinheiro</label></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<div id="productModal" class="modal">
+  <div class="modal-card">
+    <div class="modal-head"><div><h3 id="productModalTitle">Novo produto</h3><p>Dados exibidos no cardápio.</p></div><button class="close" data-close="productModal">×</button></div>
+    <input id="prodId" type="hidden">
+    <div class="form-grid">
+      <div class="field"><label>Nome</label><input id="prodName"></div>
+      <div class="field"><label>Categoria</label><select id="prodCategory"></select></div>
+      <div class="field"><label>Preço (R$)</label><input id="prodPrice" inputmode="decimal"></div>
+      <div class="field"><label>Ordem</label><input id="prodOrder" type="number" min="0" max="10000"></div>
+      <div class="field span2"><label>Descrição</label><textarea id="prodDesc" rows="3"></textarea></div>
+      <div class="field span2"><label>Imagem</label><div class="upload"><img id="prodPreview" class="preview-img" alt=""><input id="prodFile" type="file" accept="image/jpeg,image/png,image/webp"><button id="uploadProductImage" class="ghost" type="button">Enviar imagem</button><input id="prodImage" placeholder="https://..."></div></div>
+      <div class="field span2"><label>Visibilidade</label><div class="checkboxes"><label class="check-chip"><input id="prodAvailable" type="checkbox"> Disponível</label><label class="check-chip"><input id="prodFeatured" type="checkbox"> Destaque</label></div></div>
+    </div>
+    <div id="addonsArea" class="hidden">
+      <div class="card-head" style="margin-top:14px"><div><h3>Grupos de adicionais</h3><p>Defina escolhas obrigatórias, únicas ou múltiplas.</p></div><button id="newAddonGroup" class="ghost mini">Novo grupo</button></div>
+      <div id="addonGroupList" class="addon-list"></div>
+      <div class="card-head" style="margin-top:14px"><div><h3>Adicionais</h3><p>Vincule cada opção a um grupo quando necessário.</p></div><button id="newAddon" class="ghost mini">Adicionar</button></div>
+      <div id="addonList" class="addon-list"></div>
+      <div class="card-head" style="margin-top:18px"><div><h3>Venda complementar</h3><p>Escolha produtos para sugerir automaticamente quando este item entrar no pedido.</p></div></div>
+      <div class="recommend-editor">
+        <div class="field" style="margin:0"><label>Produto sugerido</label><select id="recommendProductSelect"></select></div>
+        <div class="field" style="margin:0"><label>Texto opcional</label><input id="recommendLabel" maxlength="100" placeholder="Ex.: Combina com seu pedido"></div>
+        <button id="addRecommendation" class="primary mini" type="button">Adicionar sugestão</button>
+      </div>
+      <div id="recommendationList" class="addon-list"></div>
+    </div>
+    <div class="modal-actions"><button id="archiveProduct" class="danger hidden">Desativar produto</button><button class="ghost" data-close="productModal">Cancelar</button><button id="saveProduct" class="primary">Salvar produto</button></div>
+  </div>
+</div>
+
+<div id="categoriesModal" class="modal">
+  <div class="modal-card">
+    <div class="modal-head"><div><h3>Categorias</h3><p>Organize as seções exibidas no cardápio.</p></div><button class="close" data-close="categoriesModal">×</button></div>
+    <div id="categoryList" class="addon-list"></div>
+    <div class="modal-actions"><button id="newCategory" class="primary">Nova categoria</button><button class="ghost" data-close="categoriesModal">Fechar</button></div>
+  </div>
+</div>
+
+<div id="categoryModal" class="modal">
+  <div class="modal-card" style="width:min(480px,100%)">
+    <div class="modal-head"><div><h3 id="categoryModalTitle">Nova categoria</h3><p>Nome e posição no cardápio.</p></div><button class="close" data-close="categoryModal">×</button></div>
+    <input id="catId" type="hidden">
+    <div class="field"><label>Nome</label><input id="catName"></div>
+    <div class="field"><label>Ordem</label><input id="catOrder" type="number" min="0" max="10000"></div>
+    <div class="modal-actions"><button id="archiveCategory" class="danger hidden">Desativar</button><button id="saveCategory" class="primary">Salvar categoria</button></div>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script>
+(function(){
+var state={user:null,businesses:[],businessId:null,detail:null,analytics:null,analyticsDays:30,page:"overview",busy:false};
+var access=localStorage.getItem("lc_access_token")||"";
+var refresh=localStorage.getItem("lc_refresh_token")||"";
+var authHash=new URLSearchParams(location.hash.slice(1));
+var recoveryMode=authHash.get("type")==="recovery";
+if(authHash.get("access_token")){
+  access=authHash.get("access_token")||"";
+  refresh=authHash.get("refresh_token")||refresh;
+  localStorage.setItem("lc_access_token",access);
+  if(refresh)localStorage.setItem("lc_refresh_token",refresh);
+  history.replaceState({},"",location.pathname+location.search);
+}
+var $=function(id){return document.getElementById(id)};
+var qa=function(s){return Array.prototype.slice.call(document.querySelectorAll(s))};
+var esc=function(v){return String(v==null?"":v).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})};
+var money=function(cents){return (Number(cents||0)/100).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})};
+var reais=function(cents){return (Number(cents||0)/100).toFixed(2).replace(".",",")};
+var cents=function(value){var n=Number(String(value||"0").replace(/\./g,"").replace(",","."));return Number.isFinite(n)?Math.round(n*100):0};
+var roleLabel=function(role){return ({owner:"Proprietário",manager:"Gerente",editor:"Editor",viewer:"Visualização"})[role]||role||"—"};
+var statusLabel=function(status){return ({draft:"Rascunho",onboarding_received:"Onboarding",in_setup:"Em implantação",review:"Em revisão",published:"Publicado",active:"Ativo",suspended:"Suspenso",cancelled:"Cancelado",archived:"Arquivado"})[status]||status||"—"};
+var billingLabel=function(status){return ({unknown:"Não definido",pending:"Pendente",active:"Ativa",past_due:"Em atraso",cancelled:"Cancelada"})[status]||status||"—"};
+
+function toast(message,error){var t=$("toast");t.textContent=message;t.className="toast show"+(error?" error":"");clearTimeout(window.__toastTimer);window.__toastTimer=setTimeout(function(){t.className="toast"},2800)}
+function setSync(text,busy){$("syncText").innerHTML=busy?'<span style="display:inline-flex;gap:6px;align-items:center"><span class="spinner"></span>'+esc(text)+'</span>':esc(text)}
+async function refreshSession(){if(!refresh)return false;try{var r=await fetch("/lcai/v1/auth/refresh",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({refresh_token:refresh})});if(!r.ok)return false;var d=await r.json();if(!d.access_token)return false;access=d.access_token;refresh=d.refresh_token||refresh;localStorage.setItem("lc_access_token",access);localStorage.setItem("lc_refresh_token",refresh);return true}catch(e){return false}}
+async function api(path,opts,retry){opts=opts||{};var headers=new Headers(opts.headers||{});if(access)headers.set("authorization","Bearer "+access);if(!(opts.body instanceof FormData)&&opts.body&&!headers.has("content-type"))headers.set("content-type","application/json");var r=await fetch(path,Object.assign({},opts,{headers:headers}));if(r.status===401&&retry!==false&&await refreshSession())return api(path,opts,false);var raw=await r.text(),d={};try{d=raw?JSON.parse(raw):{}}catch(e){}if(!r.ok)throw new Error(d.error||d.message||("Erro "+r.status));return d}
+function showAuth(){ $("auth").classList.remove("hidden");$("shell").classList.add("hidden") }
+function showApp(){ $("auth").classList.add("hidden");$("shell").classList.remove("hidden") }
+function setTab(which){var login=which==="login",signup=which==="signup";$("tabLogin").classList.toggle("active",login);$("tabSignup").classList.toggle("active",signup);$("tabs")&&$("tabs").classList.remove("hidden");$("loginPane").classList.toggle("hidden",!login);$("signupPane").classList.toggle("hidden",!signup);$("resetPane").classList.add("hidden");$("authMsg").textContent=""}
+function showReset(){showAuth();$("loginPane").classList.add("hidden");$("signupPane").classList.add("hidden");$("resetPane").classList.remove("hidden");document.querySelector(".tabs").classList.add("hidden");$("authMsg").textContent="Crie uma nova senha para continuar no Portal do Proprietário."}
+$("tabLogin").onclick=function(){setTab("login")};$("tabSignup").onclick=function(){setTab("signup")};
+$("loginBtn").onclick=async function(){var email=$("loginEmail").value.trim(),password=$("loginPassword").value;if(!email||!password)return $("authMsg").textContent="Preencha e-mail e senha.";this.disabled=true;$("authMsg").textContent="Entrando...";try{var d=await fetch("/lcai/v1/auth/login",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email,password:password})});var j=await d.json();if(!d.ok)throw new Error(j.error||j.message||"Não foi possível entrar.");access=j.access_token||j.session&&j.session.access_token||"";refresh=j.refresh_token||j.session&&j.session.refresh_token||"";if(!access)throw new Error("Sessão não recebida.");localStorage.setItem("lc_access_token",access);if(refresh)localStorage.setItem("lc_refresh_token",refresh);await boot()}catch(e){$("authMsg").textContent=e.message}finally{this.disabled=false}};
+$("signupBtn").onclick=async function(){var email=$("signupEmail").value.trim(),password=$("signupPassword").value,name=$("signupName").value.trim();if(!email||!password)return $("authMsg").textContent="Preencha e-mail e senha.";this.disabled=true;$("authMsg").textContent="Criando acesso...";try{var r=await fetch("/lcai/v1/menu-pro/owner/auth/signup",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email,password:password,full_name:name})});var j=await r.json();if(!r.ok)throw new Error(j.error||j.message||"Não foi possível criar a conta.");var s=j.session||{};if(s.access_token){access=s.access_token;refresh=s.refresh_token||"";localStorage.setItem("lc_access_token",access);if(refresh)localStorage.setItem("lc_refresh_token",refresh);await boot()}else{setTab("login");$("loginEmail").value=email;$("authMsg").textContent=j.message||"Se este e-mail estiver autorizado, confira sua caixa de entrada para confirmar o acesso."}}catch(e){$("authMsg").textContent=e.message}finally{this.disabled=false}};
+$("recoverBtn").onclick=async function(){var email=$("loginEmail").value.trim();if(!email)return $("authMsg").textContent="Informe seu e-mail acima.";try{await fetch("/lcai/v1/menu-pro/owner/auth/recover",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({email:email})});$("authMsg").textContent="Se a conta existir, as instruções foram enviadas ao e-mail."}catch(e){$("authMsg").textContent="Não foi possível solicitar a recuperação agora."}};
+$("logoutBtn").onclick=async function(){try{if(access)await api("/lcai/v1/auth/logout",{method:"POST"},false)}catch(e){}access="";refresh="";localStorage.removeItem("lc_access_token");localStorage.removeItem("lc_refresh_token");showAuth()};
+$("resetBtn").onclick=async function(){var password=$("resetPassword").value,confirmPassword=$("resetConfirm").value;if(password.length<8)return $("authMsg").textContent="A nova senha deve ter pelo menos 8 caracteres.";if(password!==confirmPassword)return $("authMsg").textContent="As senhas não coincidem.";this.disabled=true;$("authMsg").textContent="Atualizando senha...";try{var r=await fetch("/lcai/v1/auth/password",{method:"POST",headers:{"content-type":"application/json","authorization":"Bearer "+access},body:JSON.stringify({password:password})});var j=await r.json();if(!r.ok)throw new Error(j.error||j.message||"Não foi possível atualizar a senha.");recoveryMode=false;$("authMsg").textContent="Senha atualizada. Abrindo seu painel...";setTimeout(function(){boot()},350)}catch(e){$("authMsg").textContent=e.message}finally{this.disabled=false}};
+
+
+async function boot(){if(!access)return showAuth();setSync("Conectando…",true);try{var d=await api("/lcai/v1/menu-pro/owner/me");state.user=d.user||null;state.businesses=d.businesses||[];showApp();$("accountEmail").textContent=state.user&&state.user.email||"Conta autenticada";renderBusinessSelector();if(!state.businesses.length){$("noAccess").classList.remove("hidden");qa(".page").forEach(function(x){x.classList.add("hidden")});setSync("Sem estabelecimento",false);return}$("noAccess").classList.add("hidden");qa(".page").forEach(function(x){x.classList.remove("hidden");x.classList.toggle("active",x.id==="page-"+state.page)});state.businessId=state.businessId&&state.businesses.some(function(b){return b.id===state.businessId})?state.businessId:state.businesses[0].id;$("businessSelect").value=state.businessId;await loadDetail();setSync("Sincronizado",false)}catch(e){if(/login|sessão|Sessão/i.test(e.message)){access="";localStorage.removeItem("lc_access_token");showAuth();$("authMsg").textContent="Entre para continuar."}else{showApp();toast(e.message,true);setSync("Falha na sincronização",false)}}}
+function renderBusinessSelector(){var select=$("businessSelect");select.innerHTML=state.businesses.map(function(b){return '<option value="'+esc(b.id)+'">'+esc(b.display_name||b.business_name)+'</option>'}).join("");select.onchange=async function(){state.businessId=this.value;await loadDetail()}}
+async function loadDetail(){if(!state.businessId)return;setSync("Atualizando…",true);try{state.detail=await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId);state.analytics=null;renderAll();if(state.page==="analytics")await loadAnalytics();setSync("Sincronizado",false)}catch(e){toast(e.message,true);setSync("Erro",false)}}
+function renderAll(){renderOverview();renderCatalog();renderSettings();var b=state.detail.business||{};$("businessStatus").textContent=statusLabel(b.status);$("roleText").textContent=roleLabel(b.role);var publicUrl=b.public_url||"";[$("publicLinkTop"),$("publicLinkHero")].forEach(function(a){a.classList.toggle("hidden",!publicUrl);if(publicUrl)a.href=publicUrl});qa("[data-go]").forEach(function(btn){btn.onclick=function(){goPage(btn.dataset.go)}})}
+function renderOverview(){var d=state.detail,b=d.business||{},cats=(d.categories||[]).filter(function(x){return x.is_active!==false}),products=(d.products||[]).filter(function(x){return x.is_active!==false}),available=products.filter(function(x){return x.is_available!==false}),unavailable=products.filter(function(x){return x.is_available===false});$("heroName").textContent=b.display_name||b.business_name||"Seu estabelecimento";$("heroCopy").textContent=b.public_url?"Seu cardápio está publicado. Alterações de produto, preço e disponibilidade são refletidas automaticamente.":"Seu cardápio ainda não está publicado. Você já pode organizar os dados enquanto a implantação é concluída.";$("healthPublish").textContent=statusLabel(b.status);$("healthBilling").textContent=b.is_demo?"Demonstração":billingLabel(b.billing_status);$("healthUpdated").textContent=b.updated_at?new Date(b.updated_at).toLocaleString("pt-BR"):"—";$("healthRole").textContent=roleLabel(b.role);$("metricCategories").textContent=cats.length;$("metricProducts").textContent=products.length;$("metricAvailable").textContent=available.length;$("metricUnavailable").textContent=unavailable.length;var attention=$("attentionList");attention.innerHTML=unavailable.length?unavailable.slice(0,5).map(function(p){return '<button data-edit-attention="'+esc(p.id)+'"><span><b>'+esc(p.name)+'</b><small>Marcado como esgotado</small></span><span>'+money(p.price_cents)+'</span></button>'}).join(""):'<div class="empty">Nenhum produto esgotado no momento.</div>';qa("[data-edit-attention]").forEach(function(btn){btn.onclick=function(){goPage("catalog");openProduct(btn.dataset.editAttention)}})}
+function renderCatalog(){var d=state.detail||{},cats=(d.categories||[]).filter(function(x){return x.is_active!==false}),products=(d.products||[]).filter(function(x){return x.is_active!==false});$("categoryFilter").innerHTML='<option value="">Todas as categorias</option>'+cats.map(function(c){return '<option value="'+esc(c.id)+'">'+esc(c.name)+'</option>'}).join("");$("prodCategory").innerHTML='<option value="">Sem categoria</option>'+cats.map(function(c){return '<option value="'+esc(c.id)+'">'+esc(c.name)+'</option>'}).join("");renderProducts();$("productSearch").oninput=renderProducts;$("categoryFilter").onchange=renderProducts;$("availabilityFilter").onchange=renderProducts;$("newProduct").disabled=!d.permissions.edit_catalog;$("manageCategories").disabled=!d.permissions.edit_catalog;$("manageCategoriesQuick").disabled=!d.permissions.edit_catalog}
+function renderProducts(){var d=state.detail||{},cats=d.categories||[],map={};cats.forEach(function(c){map[c.id]=c.name});var q=$("productSearch").value.trim().toLowerCase(),cat=$("categoryFilter").value,availability=$("availabilityFilter").value;var list=(d.products||[]).filter(function(p){if(p.is_active===false)return false;if(cat&&p.category_id!==cat)return false;if(availability==="available"&&p.is_available===false)return false;if(availability==="unavailable"&&p.is_available!==false)return false;if(q&&(String(p.name)+" "+String(p.description||"")).toLowerCase().indexOf(q)<0)return false;return true});$("productList").innerHTML=list.length?list.map(function(p){return '<div class="row-card"><img class="thumb" src="'+esc(p.image_url||"")+'" alt=""><div><div class="row-title">'+esc(p.name)+(p.is_featured?' <span style="color:#e3ba5a">· destaque</span>':'')+'</div><div class="row-sub">'+esc(map[p.category_id]||"Sem categoria")+' · '+esc(p.description||"Sem descrição")+'</div><div class="row-price">'+money(p.price_cents)+'</div></div><div class="row-actions"><button class="toggle '+(p.is_available!==false?"on":"")+'" data-toggle="'+esc(p.id)+'" title="Disponibilidade"></button><button class="ghost mini" data-edit="'+esc(p.id)+'">Editar</button></div></div>'}).join(""):'<div class="empty">Nenhum produto encontrado.</div>';qa("[data-edit]").forEach(function(btn){btn.onclick=function(){openProduct(btn.dataset.edit)}});qa("[data-toggle]").forEach(function(btn){btn.onclick=async function(){var p=(state.detail.products||[]).find(function(x){return x.id===btn.dataset.toggle});if(!p)return;btn.disabled=true;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+p.id,{method:"PATCH",body:JSON.stringify({is_available:p.is_available===false})});await loadDetail();toast(p.is_available===false?"Produto disponível novamente.":"Produto marcado como esgotado.")}catch(e){toast(e.message,true)}finally{btn.disabled=false}}})}
+function renderSettings(){var b=state.detail.business||{},s=b.settings||{},t=b.theme||{};$("setDisplayName").value=b.display_name||"";$("setSegment").value=b.segment||"";$("setCity").value=b.city_state||"";$("setWhats").value=b.order_whatsapp||"";$("setSubtitle").value=s.subtitle||"";$("setInitials").value=t.brand_initials||"";$("setAccent").value=/^#[0-9a-f]{6}$/i.test(t.accent||"")?t.accent:"#67e0ae";$("setLogo").value=t.logo_url||"";$("setCover").value=s.cover_image_url||"";$("setHours").value=s.business_hours||"";$("setEta").value=s.eta_text||"";$("setDeliveryFee").value=reais(s.delivery_fee_cents||0);$("setMinimum").value=reais(s.minimum_order_cents||0);var modes=s.service_modes||[];$("modeDelivery").checked=modes.indexOf("Entrega")>=0;$("modePickup").checked=modes.indexOf("Retirada")>=0;var pays=s.payment_methods||[];$("payPix").checked=pays.indexOf("Pix")>=0;$("payCard").checked=pays.indexOf("Cartão na entrega")>=0;$("payCash").checked=pays.indexOf("Dinheiro")>=0;$("saveSettings").disabled=!state.detail.permissions.edit_settings;$("uploadLogo").disabled=!state.detail.permissions.edit_settings;$("uploadCover").disabled=!state.detail.permissions.edit_settings}
+function goPage(page){state.page=page;qa(".page").forEach(function(el){el.classList.toggle("active",el.id==="page-"+page)});qa(".nav button").forEach(function(btn){btn.classList.toggle("active",btn.dataset.page===page)});var labels={overview:["Visão geral","Acompanhe e atualize seu cardápio"],catalog:["Cardápio","Produtos, preços e disponibilidade"],analytics:["Analytics","Uso do cardápio e intenção de pedidos"],settings:["Configurações","Identidade e operação do estabelecimento"]};$("topTitle").textContent=labels[page][0];$("topSub").textContent=labels[page][1];$("side").classList.remove("open");if(page==="analytics")loadAnalytics()}
+qa(".nav button").forEach(function(btn){btn.onclick=function(){goPage(btn.dataset.page)}});$("mobileMenu").onclick=function(){$("side").classList.toggle("open")};
+
+
+async function loadAnalytics(){
+  if(!state.businessId)return;
+  setSync("Lendo analytics…",true);
+  try{
+    var d=await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/analytics?days="+state.analyticsDays);
+    state.analytics=d.analytics||{};
+    renderAnalytics();
+    setSync("Sincronizado",false);
+  }catch(e){toast(e.message,true);setSync("Erro no analytics",false)}
+}
+function renderAnalytics(){
+  var a=state.analytics||{},m=a.metrics||{},f=a.funnel||{},daily=a.daily||[],products=a.top_products||[],sources=a.sources||[];
+  $("anSessions").textContent=Number(m.sessions||0).toLocaleString("pt-BR");
+  $("anViews").textContent=Number(m.views||0).toLocaleString("pt-BR");
+  $("anWhats").textContent=Number(m.whatsapp_generated||0).toLocaleString("pt-BR");
+  $("anConversion").textContent=Number(m.conversion_rate||0).toLocaleString("pt-BR",{maximumFractionDigits:2})+"%";
+  $("anProductOpens").textContent=Number(m.product_opens||0).toLocaleString("pt-BR");
+  $("anAdds").textContent=Number(m.add_to_cart||0).toLocaleString("pt-BR");
+  $("anCarts").textContent=Number(m.cart_opens||0).toLocaleString("pt-BR");
+  $("anIntent").textContent=money(Number(m.intent_value_cents||0));
+  var stages=[
+    ["Visitaram",Number(f.view_sessions||0)],
+    ["Abriram produto",Number(f.product_sessions||0)],
+    ["Adicionaram",Number(f.add_sessions||0)],
+    ["Abriram carrinho",Number(f.cart_sessions||0)],
+    ["Geraram pedido",Number(f.whatsapp_sessions||0)]
+  ],max=Math.max(1,stages[0][1]);
+  $("analyticsFunnel").innerHTML=stages.map(function(s){var pct=Math.round(s[1]/max*100);return '<div class="funnel-row"><span>'+esc(s[0])+'</span><div class="funnel-bar"><i style="width:'+pct+'%"></i></div><b>'+s[1]+'</b></div>'}).join("");
+  var maxDaily=Math.max(1,...daily.map(function(x){return Number(x.sessions||0)}));
+  $("dailyChart").innerHTML=daily.length?daily.map(function(x){var h=Math.max(Number(x.sessions||0)?5:2,Math.round(Number(x.sessions||0)/maxDaily*150));var d=new Date(String(x.day)+"T12:00:00");return '<div class="daily-col" title="'+Number(x.sessions||0)+' sessão(ões)"><div class="daily-bar" style="height:'+h+'px"></div><small>'+d.toLocaleDateString("pt-BR",{day:"2-digit",month:"2-digit"})+'</small></div>'}).join(""):'<div class="empty" style="width:100%">Ainda não há tráfego neste período.</div>';
+  $("topProducts").innerHTML=products.length?products.map(function(p){return '<div class="analytics-row"><div><b>'+esc(p.product_name||"Produto")+'</b><small>'+Number(p.opens||0)+' abertura(s)</small></div><strong>'+Number(p.adds||0)+' adição(ões)</strong></div>'}).join(""):'<div class="empty">Ainda não há interação com produtos.</div>';
+  $("trafficSources").innerHTML=sources.length?sources.map(function(s){return '<div class="analytics-row"><div><b>'+esc(s.source||"Direto")+'</b><small>sessões identificadas</small></div><strong>'+Number(s.sessions||0)+'</strong></div>'}).join(""):'<div class="empty">Ainda não há origem de tráfego disponível.</div>';
+}
+$("analyticsPeriod").onchange=function(){state.analyticsDays=Number(this.value||30);loadAnalytics()};
+$("refreshAnalytics").onclick=loadAnalytics;
+
+$("newProduct").onclick=function(){openProduct(null)};
+function openProduct(id){var p=id&&(state.detail.products||[]).find(function(x){return x.id===id})||null;$("productModalTitle").textContent=p?"Editar produto":"Novo produto";$("prodId").value=p&&p.id||"";$("prodName").value=p&&p.name||"";$("prodCategory").value=p&&p.category_id||"";$("prodPrice").value=p?reais(p.price_cents):"";$("prodOrder").value=p&&p.sort_order!=null?p.sort_order:100;$("prodDesc").value=p&&p.description||"";$("prodImage").value=p&&p.image_url||"";$("prodPreview").src=p&&p.image_url||"";$("prodAvailable").checked=!p||p.is_available!==false;$("prodFeatured").checked=!!(p&&p.is_featured);$("addonsArea").classList.toggle("hidden",!p);$("archiveProduct").classList.toggle("hidden",!p);renderAddonGroups(p);renderAddons(p);renderRecommendations(p);openModal("productModal")}
+function renderAddonGroups(product){
+  var list=$("addonGroupList");if(!product){list.innerHTML="";return}
+  var groups=(product.addon_groups||[]).filter(function(g){return g.is_active!==false});
+  list.innerHTML=groups.length?groups.map(function(g){
+    var rule=g.selection_type==="single"?"Escolha única":("Múltipla · mín. "+Number(g.min_select||0)+(g.max_select!=null?" · máx. "+Number(g.max_select):""));
+    return '<div class="addon group-row"><div><b>'+esc(g.name)+'</b><div class="row-sub">'+esc(rule)+'</div></div><div class="row-sub">Ordem '+Number(g.sort_order||0)+'</div><div style="display:flex;gap:5px"><button class="ghost mini" data-group-edit="'+esc(g.id)+'">Editar</button><button class="danger mini" data-group-del="'+esc(g.id)+'">×</button></div></div>'
+  }).join(""):'<div class="empty">Sem grupos. Os adicionais atuais continuam opcionais.</div>';
+  qa("[data-group-edit]").forEach(function(btn){btn.onclick=function(){editAddonGroup(product,btn.dataset.groupEdit)}});
+  qa("[data-group-del]").forEach(function(btn){btn.onclick=async function(){if(!confirm("Desativar este grupo? Os adicionais serão mantidos como opcionais sem grupo."))return;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+product.id+"/addon-groups/"+btn.dataset.groupDel,{method:"DELETE"});await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===product.id});renderAddonGroups(fresh);renderAddons(fresh);toast("Grupo desativado.")}catch(e){toast(e.message,true)}}})
+}
+async function editAddonGroup(product,id){
+  var group=id&&(product.addon_groups||[]).find(function(g){return g.id===id})||null;
+  var name=prompt("Nome do grupo:",group&&group.name||"Escolha uma opção");if(!name)return;
+  var type=prompt("Tipo: single para escolha única ou multiple para múltiplas:",group&&group.selection_type||"multiple");if(type===null)return;
+  type=String(type).toLowerCase()==="single"?"single":"multiple";
+  var min=prompt("Quantidade mínima de escolhas:",String(group&&group.min_select!=null?group.min_select:(type==="single"?1:0)));if(min===null)return;
+  var max=prompt("Quantidade máxima (deixe vazio para sem limite):",group&&group.max_select!=null?String(group.max_select):(type==="single"?"1":""));if(max===null)return;
+  var payload={name:name,selection_type:type,min_select:Number(min||0),max_select:max===""?null:Number(max),sort_order:Number(group&&group.sort_order||100)};
+  try{
+    var path="/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+product.id+"/addon-groups"+(group?"/"+group.id:"");
+    await api(path,{method:group?"PATCH":"POST",body:JSON.stringify(payload)});
+    await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===product.id});renderAddonGroups(fresh);renderAddons(fresh);toast(group?"Grupo atualizado.":"Grupo criado.")
+  }catch(e){toast(e.message,true)}
+}
+function renderAddons(product){
+  var list=$("addonList");if(!product){list.innerHTML="";return}
+  var addons=(product.addons||[]).filter(function(a){return a.is_active!==false});
+  var groups=(product.addon_groups||[]).filter(function(g){return g.is_active!==false});
+  var options='<option value="">Sem grupo (opcional)</option>'+groups.map(function(g){return '<option value="'+esc(g.id)+'">'+esc(g.name)+'</option>'}).join("");
+  list.innerHTML=addons.length?addons.map(function(a){return '<div class="addon"><div class="field" style="margin:0"><label>Nome</label><input data-addon-name="'+esc(a.id)+'" value="'+esc(a.name)+'"></div><div class="field" style="margin:0"><label>Preço (R$)</label><input data-addon-price="'+esc(a.id)+'" value="'+reais(a.price_cents)+'"></div><div class="field" style="margin:0"><label>Grupo</label><select data-addon-group="'+esc(a.id)+'">'+options+'</select></div><div style="display:flex;gap:5px"><button class="ghost mini" data-addon-save="'+esc(a.id)+'">Salvar</button><button class="danger mini" data-addon-del="'+esc(a.id)+'">×</button></div></div>'}).join(""):'<div class="empty">Nenhum adicional cadastrado.</div>';
+  addons.forEach(function(a){var sel=document.querySelector("[data-addon-group='"+a.id+"']");if(sel)sel.value=a.group_id||""});
+  qa("[data-addon-save]").forEach(function(btn){btn.onclick=async function(){var id=btn.dataset.addonSave;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+product.id+"/addons/"+id,{method:"PATCH",body:JSON.stringify({name:document.querySelector("[data-addon-name='"+id+"']").value,price_cents:cents(document.querySelector("[data-addon-price='"+id+"']").value),group_id:document.querySelector("[data-addon-group='"+id+"']").value||null})});await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===product.id});renderAddonGroups(fresh);renderAddons(fresh);toast("Adicional atualizado.")}catch(e){toast(e.message,true)}}});
+  qa("[data-addon-del]").forEach(function(btn){btn.onclick=async function(){if(!confirm("Desativar este adicional?"))return;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+product.id+"/addons/"+btn.dataset.addonDel,{method:"DELETE"});await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===product.id});renderAddons(fresh);toast("Adicional desativado.")}catch(e){toast(e.message,true)}}})
+}
+function renderRecommendations(product){
+  var list=$("recommendationList"),select=$("recommendProductSelect");if(!product){list.innerHTML="";select.innerHTML="";return}
+  var all=(state.detail.products||[]).filter(function(p){return p.is_active!==false&&p.id!==product.id});
+  var recs=(product.recommendations||[]).filter(function(r){return r.is_active!==false});
+  var used=new Set(recs.map(function(r){return r.recommended_product_id}));
+  var candidates=all.filter(function(p){return !used.has(p.id)});
+  select.innerHTML=candidates.length?'<option value="">Selecione...</option>'+candidates.map(function(p){return '<option value="'+esc(p.id)+'">'+esc(p.name)+' · '+money(p.price_cents)+'</option>'}).join(""):'<option value="">Todos os produtos já estão vinculados</option>';
+  list.innerHTML=recs.length?recs.map(function(r){
+    var p=all.find(function(x){return x.id===r.recommended_product_id});
+    return '<div class="recommend-row"><div><b>'+esc(p&&p.name||"Produto")+'</b><div class="row-sub">'+money(p&&p.price_cents||0)+'</div></div><div class="row-sub">'+esc(r.label||"Sugestão complementar")+'</div><button class="danger mini" data-rec-del="'+esc(r.id)+'" type="button">Remover</button></div>'
+  }).join(""):'<div class="empty">Nenhuma sugestão manual. O cardápio ainda poderá usar recomendações automáticas por categoria.</div>';
+  qa("[data-rec-del]").forEach(function(btn){btn.onclick=async function(){
+    try{
+      await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+product.id+"/recommendations/"+btn.dataset.recDel,{method:"DELETE"});
+      await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===product.id});renderRecommendations(fresh);toast("Sugestão removida.")
+    }catch(e){toast(e.message,true)}
+  }});
+}
+$("addRecommendation").onclick=async function(){
+  var id=$("prodId").value,recommended=$("recommendProductSelect").value;if(!id||!recommended)return toast("Escolha um produto para sugerir.",true);
+  try{
+    await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+id+"/recommendations",{method:"POST",body:JSON.stringify({recommended_product_id:recommended,label:$("recommendLabel").value.trim()||null})});
+    $("recommendLabel").value="";
+    await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===id});renderRecommendations(fresh);toast("Sugestão adicionada.")
+  }catch(e){toast(e.message,true)}
+};
+
+$("newAddonGroup").onclick=function(){var id=$("prodId").value;if(!id)return;var p=(state.detail.products||[]).find(function(x){return x.id===id});if(p)editAddonGroup(p,null)};
+$("newAddon").onclick=async function(){var id=$("prodId").value;if(!id)return;var p=(state.detail.products||[]).find(function(x){return x.id===id});var name=prompt("Nome do adicional:");if(!name)return;var price=prompt("Valor adicional em R$:","0,00");if(price===null)return;var groups=(p&&p.addon_groups||[]).filter(function(g){return g.is_active!==false});var groupId=null;if(groups.length){var choice=prompt("Grupo (digite o número ou deixe vazio para opcional):\n"+groups.map(function(g,i){return (i+1)+" - "+g.name}).join("\n"),"");if(choice){var idx=Number(choice)-1;if(groups[idx])groupId=groups[idx].id}}try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+id+"/addons",{method:"POST",body:JSON.stringify({name:name,price_cents:cents(price),group_id:groupId})});await loadDetail();var fresh=(state.detail.products||[]).find(function(x){return x.id===id});renderAddonGroups(fresh);renderAddons(fresh);toast("Adicional criado.")}catch(e){toast(e.message,true)}};
+$("saveProduct").onclick=async function(){var id=$("prodId").value,name=$("prodName").value.trim();if(!name)return toast("Informe o nome do produto.",true);var payload={name:name,category_id:$("prodCategory").value||null,price_cents:cents($("prodPrice").value),sort_order:Number($("prodOrder").value||100),description:$("prodDesc").value.trim(),image_url:$("prodImage").value.trim()||null,image_alt:name,is_available:$("prodAvailable").checked,is_featured:$("prodFeatured").checked};this.disabled=true;try{if(id)await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+id,{method:"PATCH",body:JSON.stringify(payload)});else await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products",{method:"POST",body:JSON.stringify(payload)});closeModal("productModal");await loadDetail();toast(id?"Produto atualizado.":"Produto criado.")}catch(e){toast(e.message,true)}finally{this.disabled=false}};
+$("archiveProduct").onclick=async function(){var id=$("prodId").value;if(!id||!confirm("Desativar este produto? Ele deixará de aparecer no cardápio."))return;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/products/"+id,{method:"DELETE"});closeModal("productModal");await loadDetail();toast("Produto desativado.")}catch(e){toast(e.message,true)}};
+$("prodImage").oninput=function(){$("prodPreview").src=this.value};
+$("uploadProductImage").onclick=async function(){var file=$("prodFile").files[0];if(!file)return $("prodFile").click();try{var form=new FormData();form.append("file",file);form.append("purpose","product");this.disabled=true;var d=await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/assets",{method:"POST",body:form});$("prodImage").value=d.url;$("prodPreview").src=d.url;toast("Imagem enviada.")}catch(e){toast(e.message,true)}finally{this.disabled=false}};
+$("prodFile").onchange=function(){if(this.files[0])$("uploadProductImage").click()};
+
+function openCategories(){renderCategories();openModal("categoriesModal")}
+$("manageCategories").onclick=openCategories;$("manageCategoriesQuick").onclick=openCategories;
+function renderCategories(){var products=state.detail.products||[];var cats=(state.detail.categories||[]).filter(function(c){return c.is_active!==false});$("categoryList").innerHTML=cats.length?cats.map(function(c){var count=products.filter(function(p){return p.is_active!==false&&p.category_id===c.id}).length;return '<div class="addon"><div><b>'+esc(c.name)+'</b><div class="row-sub">'+count+' produto(s)</div></div><div class="row-sub">Ordem '+Number(c.sort_order||0)+'</div><button class="ghost mini" data-edit-cat="'+esc(c.id)+'">Editar</button></div>'}).join(""):'<div class="empty">Nenhuma categoria cadastrada.</div>';qa("[data-edit-cat]").forEach(function(btn){btn.onclick=function(){openCategory(btn.dataset.editCat)}})}
+$("newCategory").onclick=function(){openCategory(null)};
+function openCategory(id){var c=id&&(state.detail.categories||[]).find(function(x){return x.id===id})||null;$("categoryModalTitle").textContent=c?"Editar categoria":"Nova categoria";$("catId").value=c&&c.id||"";$("catName").value=c&&c.name||"";$("catOrder").value=c&&c.sort_order!=null?c.sort_order:100;$("archiveCategory").classList.toggle("hidden",!c);openModal("categoryModal")}
+$("saveCategory").onclick=async function(){var id=$("catId").value,name=$("catName").value.trim();if(!name)return toast("Informe o nome da categoria.",true);try{var payload={name:name,sort_order:Number($("catOrder").value||100)};if(id)await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/categories/"+id,{method:"PATCH",body:JSON.stringify(payload)});else await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/categories",{method:"POST",body:JSON.stringify(payload)});closeModal("categoryModal");await loadDetail();renderCategories();toast(id?"Categoria atualizada.":"Categoria criada.")}catch(e){toast(e.message,true)}};
+$("archiveCategory").onclick=async function(){var id=$("catId").value;if(!id||!confirm("Desativar esta categoria?"))return;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/categories/"+id,{method:"DELETE"});closeModal("categoryModal");await loadDetail();renderCategories();toast("Categoria desativada.")}catch(e){toast(e.message,true)}};
+
+$("saveSettings").onclick=async function(){var modes=[];if($("modeDelivery").checked)modes.push("Entrega");if($("modePickup").checked)modes.push("Retirada");var payments=[];if($("payPix").checked)payments.push("Pix");if($("payCard").checked)payments.push("Cartão na entrega");if($("payCash").checked)payments.push("Dinheiro");var payload={display_name:$("setDisplayName").value.trim(),segment:$("setSegment").value.trim(),city_state:$("setCity").value.trim(),order_whatsapp:$("setWhats").value.trim(),settings:{subtitle:$("setSubtitle").value.trim(),business_hours:$("setHours").value.trim(),eta_text:$("setEta").value.trim(),cover_image_url:$("setCover").value.trim()||null,delivery_fee_cents:cents($("setDeliveryFee").value),minimum_order_cents:cents($("setMinimum").value),service_modes:modes,payment_methods:payments},theme:{brand_initials:$("setInitials").value.trim(),accent:$("setAccent").value,logo_url:$("setLogo").value.trim()||null}};this.disabled=true;try{await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId,{method:"PATCH",body:JSON.stringify(payload)});await loadDetail();toast("Configurações salvas.")}catch(e){toast(e.message,true)}finally{this.disabled=false}};
+$("uploadLogo").onclick=async function(){var file=$("logoFile").files[0];if(!file)return $("logoFile").click();try{var form=new FormData();form.append("file",file);form.append("purpose","logo");this.disabled=true;var d=await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/assets",{method:"POST",body:form});$("setLogo").value=d.url;toast("Logo enviado. Clique em salvar alterações.")}catch(e){toast(e.message,true)}finally{this.disabled=false}};
+$("logoFile").onchange=function(){if(this.files[0])$("uploadLogo").click()};
+$("uploadCover").onclick=async function(){var file=$("coverFile").files[0];if(!file)return $("coverFile").click();try{var form=new FormData();form.append("file",file);form.append("purpose","cover");this.disabled=true;var d=await api("/lcai/v1/menu-pro/owner/businesses/"+state.businessId+"/assets",{method:"POST",body:form});$("setCover").value=d.url;toast("Capa enviada. Clique em salvar alterações.")}catch(e){toast(e.message,true)}finally{this.disabled=false}};
+$("coverFile").onchange=function(){if(this.files[0])$("uploadCover").click()};
+
+function openModal(id){$(id).classList.add("open")}
+function closeModal(id){$(id).classList.remove("open")}
+qa("[data-close]").forEach(function(btn){btn.onclick=function(){closeModal(btn.dataset.close)}});qa(".modal").forEach(function(m){m.addEventListener("click",function(e){if(e.target===m)closeModal(m.id)})});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")qa(".modal.open").forEach(function(m){closeModal(m.id)})});
+if(recoveryMode)showReset();else boot();
+})();
+</script>
+</body>
+</html>
