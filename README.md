@@ -1,6 +1,24 @@
 # Talvi
 
-**Talvi** é o produto de cardápio/vitrine gastronômica e gestão de pedidos da LC Soluções Digitais.
+**Talvi** é o produto de cardápio digital e operação de pedidos da LC Soluções Digitais.
+
+## Posicionamento comercial
+
+**Categoria:** cardápio digital e gestão de pedidos.
+
+**Para quem:** restaurantes, lanchonetes, hamburguerias, pizzarias, cafeterias, açaíterias e outros negócios de alimentação que querem vender direto e organizar o recebimento de pedidos.
+
+**Dor central:** cardápios pouco práticos, pedidos com atrito, dependência excessiva de marketplaces e operação fragmentada entre catálogo, WhatsApp e atendimento.
+
+**Posicionamento:** cardápio digital e operação de pedidos para vender direto sem complicar o atendimento.
+
+**Mensagem principal:** **“Seu cardápio. Seus pedidos. Seu cliente.”**
+
+**CTA principal:** **“Criar meu cardápio”.**
+
+No ecossistema LC, as integrações prioritárias do Talvi são **WhatsApp Sales OS** e **Rumo**. A LCAI atua transversalmente como camada de inteligência e automação, sem substituir o fluxo operacional principal do Talvi.
+
+## Escopo técnico
 
 Este repositório preserva o snapshot técnico do produto anteriormente identificado como **LC Menu Pro / Cardápio Virtual** e reúne os componentes específicos que também integram o ecossistema LCAI:
 
